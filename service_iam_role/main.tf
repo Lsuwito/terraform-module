@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "service_assume_role_policy" {
+data "aws_iam_policy_document" "assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
 
@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "service_assume_role_policy" {
 
 resource "aws_iam_role" "main" {
   name               = var.role_name
-  assume_role_policy = data.aws_iam_policy_document.service_assume_role_policy.json
+  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 
   inline_policy {
     name   = "${var.role_name}_inline_policy"
