@@ -1,0 +1,12 @@
+version: "~>v0.13.0"
+
+formatter: markdown table
+
+header-from: main.tf
+footer-from: ""
+
+
+output:
+  file: README.md
+  mode: inject
+  
