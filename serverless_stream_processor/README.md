@@ -34,7 +34,7 @@ No modules.
 | <a name="input_function_image_uri"></a> [function\_image\_uri](#input\_function\_image\_uri) | The function's image uri containing the deployment package | `string` | n/a | yes |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | Name of your Lambda function | `string` | n/a | yes |
 | <a name="input_max_retry"></a> [max\_retry](#input\_max\_retry) | Maximum retry attempts | `number` | `3` | no |
-| <a name="input_role"></a> [role](#input\_role) | Function's execution role ARN | `string` | n/a | yes |
+| <a name="input_role"></a> [role](#input\_role) | Function's execution role name | `string` | n/a | yes |
 | <a name="input_shard_count"></a> [shard\_count](#input\_shard\_count) | The number of shards | `number` | `1` | no |
 | <a name="input_starting_position"></a> [starting\_position](#input\_starting\_position) | The position in the stream where function should start reading. Valid values: LATEST or TRIM\_HORIZON | `string` | `"TRIM_HORIZON"` | no |
 | <a name="input_stream_name"></a> [stream\_name](#input\_stream\_name) | Name to identify the stream | `string` | n/a | yes |

@@ -22,7 +22,7 @@ variable "function_name" {
 
 variable "role" {
   type        = string
-  description = "Function's execution role ARN"
+  description = "Function's execution role name"
 }
 
 variable "function_image_uri" {
