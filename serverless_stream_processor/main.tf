@@ -1,3 +1,7 @@
+data "aws_iam_role" "main" {
+  name = var.role
+}
+
 resource "aws_kinesis_stream" "main" {
   name        = var.stream_name
   shard_count = var.shard_count
@@ -6,7 +10,7 @@ resource "aws_kinesis_stream" "main" {
 
 resource "aws_lambda_function" "main" {
   function_name = var.function_name
-  role          = var.role
+  role          = data.aws_iam_role.main.arn
   image_uri     = var.function_image_uri
 }
 
