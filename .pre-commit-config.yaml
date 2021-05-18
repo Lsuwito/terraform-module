@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.12
+    hooks:
+      - id: terraform-fmt
+      - id: terraform-validate
+      - id: tflint
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.13.0
+    hooks:
+      - id: terraform-docs-system
+        args: ["serverless_stream_processor"]
+      - id: terraform-docs-system
+        args: ["service_iam_role"]
