@@ -17,4 +17,6 @@ resource "aws_iam_role" "main" {
     name   = "${var.role_name}_inline_policy"
     policy = var.inline_policy
   }
+
+  tags = var.additional_tags
 }

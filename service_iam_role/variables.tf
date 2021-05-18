@@ -9,6 +9,12 @@ variable "inline_policy" {
 }
 
 variable "aws_services" {
-  description = "AWS services that are allowed to assume the role, i.e: ec2.amazonaws.com"
-  type        = list(any)
+  description = "AWS services that are allowed to assume the role, i.e: [ec2.amazonaws.com]"
+  type        = list(string)
+}
+
+variable "additional_tags" {
+  description = "A list of tags to apply"
+  type        = map(string)
+  default     = {}
 }
