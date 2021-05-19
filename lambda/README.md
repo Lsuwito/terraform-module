@@ -17,11 +17,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_kinesis_stream.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kinesis_stream) | resource |
 | [aws_lambda_alias.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_alias) | resource |
-| [aws_lambda_event_source_mapping.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping) | resource |
+| [aws_lambda_event_source_mapping.kinesis](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping) | resource |
 | [aws_lambda_function.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
-| [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_role) | data source |
+| [aws_iam_role.role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_role) | data source |
+| [aws_kinesis_stream.source](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kinesis_stream) | data source |
 
 ## Inputs
 
@@ -38,9 +38,8 @@ No modules.
 | <a name="input_function_runtime"></a> [function\_runtime](#input\_function\_runtime) | Identifier of the function's runtime. See valid values in AWS documentation. Example: go1.x | `string` | n/a | yes |
 | <a name="input_max_retry"></a> [max\_retry](#input\_max\_retry) | Maximum retry attempts | `number` | `3` | no |
 | <a name="input_role"></a> [role](#input\_role) | Function's execution role name | `string` | n/a | yes |
-| <a name="input_shard_count"></a> [shard\_count](#input\_shard\_count) | The number of shards | `number` | `1` | no |
+| <a name="input_source_stream"></a> [source\_stream](#input\_source\_stream) | Name of the event source | `string` | `""` | no |
 | <a name="input_starting_position"></a> [starting\_position](#input\_starting\_position) | The position in the stream where function should start reading. Valid values: LATEST or TRIM\_HORIZON | `string` | `"TRIM_HORIZON"` | no |
-| <a name="input_stream_name"></a> [stream\_name](#input\_stream\_name) | Name to identify the stream | `string` | n/a | yes |
 
 ## Outputs
 
@@ -49,5 +48,4 @@ No modules.
 | <a name="output_function_alias_arn"></a> [function\_alias\_arn](#output\_function\_alias\_arn) | ARN of the function's alias |
 | <a name="output_function_arn"></a> [function\_arn](#output\_function\_arn) | ARN of the function |
 | <a name="output_function_qualified_arn"></a> [function\_qualified\_arn](#output\_function\_qualified\_arn) | ARN of the function version |
-| <a name="output_stream_arn"></a> [stream\_arn](#output\_stream\_arn) | ARN of the kinesis stream |
 <!-- END_TF_DOCS -->

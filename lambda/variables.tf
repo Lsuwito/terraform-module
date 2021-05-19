@@ -1,20 +1,4 @@
-variable "stream_name" {
-  type        = string
-  description = "Name to identify the stream"
-}
-
-variable "shard_count" {
-  type        = number
-  description = "The number of shards"
-  default     = 1
-}
-
-variable "additional_tags" {
-  type        = map(string)
-  description = "List of tags to apply"
-  default     = {}
-}
-
+# Lambda variables
 variable "function_name" {
   type        = string
   description = "Name of your Lambda function"
@@ -48,6 +32,19 @@ variable "deployment_package_key" {
 variable "alias" {
   type        = string
   description = "The function's alias"
+}
+
+variable "additional_tags" {
+  type        = map(string)
+  description = "List of tags to apply"
+  default     = {}
+}
+
+# Event source mapping variables (optional)
+variable "source_stream" {
+  type        = string
+  description = "Name of the event source"
+  default     = ""
 }
 
 variable "batch_size" {

@@ -1,8 +1,3 @@
-output "stream_arn" {
-  description = "ARN of the kinesis stream"
-  value       = aws_kinesis_stream.main.arn
-}
-
 output "function_alias_arn" {
   description = "ARN of the function's alias"
   value       = aws_lambda_alias.main.arn

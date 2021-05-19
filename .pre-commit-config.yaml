@@ -9,6 +9,8 @@ repos:
     rev: v0.13.0
     hooks:
       - id: terraform-docs-system
-        args: ["serverless_stream_processor"]
+        args: ["lambda"]
       - id: terraform-docs-system
         args: ["service_iam_role"]
+      - id: terraform-docs-system
+        args: ["kinesis_stream"]
