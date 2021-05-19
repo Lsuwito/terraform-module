@@ -11,7 +11,11 @@ resource "aws_kinesis_stream" "main" {
 resource "aws_lambda_function" "main" {
   function_name = var.function_name
   role          = data.aws_iam_role.main.arn
-  image_uri     = var.function_image_uri
+  s3_bucket     = var.deployment_package_bucket
+  s3_key        = var.deployment_package_key
+  handler       = var.function_handler
+  runtime       = var.function_runtime
+  tags          = var.additional_tags
 }
 
 resource "aws_lambda_alias" "main" {

@@ -20,14 +20,29 @@ variable "function_name" {
   description = "Name of your Lambda function"
 }
 
+variable "function_handler" {
+  type        = string
+  description = "Function entrypoint"
+}
+
+variable "function_runtime" {
+  type        = string
+  description = "Identifier of the function's runtime. See valid values in AWS documentation. Example: go1.x"
+}
+
 variable "role" {
   type        = string
   description = "Function's execution role name"
 }
 
-variable "function_image_uri" {
+variable "deployment_package_bucket" {
   type        = string
-  description = "The function's image uri containing the deployment package"
+  description = "S3 bucket name that contains the function's deployment package"
+}
+
+variable "deployment_package_key" {
+  type        = string
+  description = "S3 key for the function's deployment package"
 }
 
 variable "alias" {
