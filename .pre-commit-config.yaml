@@ -11,6 +11,6 @@ repos:
       - id: terraform-docs-system
         args: ["lambda"]
       - id: terraform-docs-system
-        args: ["service_iam_role"]
+        args: ["service-iam-role"]
       - id: terraform-docs-system
-        args: ["kinesis_stream"]
+        args: ["kinesis-stream"]
