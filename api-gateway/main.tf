@@ -9,7 +9,8 @@ data "aws_cognito_user_pools" "main" {
 }
 
 resource "aws_api_gateway_authorizer" "cognito" {
-  count           = var.cognito_user_pool_name == "" ? 0 : 1
+  count           = length(data.aws_cognito_user_pools.main) == 0 ? 0 : 1
+  type            = "COGNITO_USER_POOLS"
   name            = "${var.name}-cognito-authorizer"
   rest_api_id     = aws_api_gateway_rest_api.main.id
   identity_source = var.identity_source
