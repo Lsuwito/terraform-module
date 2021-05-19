@@ -14,3 +14,5 @@ repos:
         args: ["service-iam-role"]
       - id: terraform-docs-system
         args: ["kinesis-stream"]
+      - id: terraform-docs-system
+        args: ["api-gateway"]
