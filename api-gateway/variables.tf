@@ -3,6 +3,17 @@ variable "name" {
   description = "Name of your API Gateway"
 }
 
+variable "endpoint_type" {
+  type        = string
+  description = "Endpoint type. Valid values: EDGE, REGIONAL, PRIVATE"
+  default     = "EDGE"
+}
+
+variable "openapi_spec" {
+  type        = map(any)
+  description = "Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail"
+}
+
 variable "additional_tags" {
   type        = map(string)
   description = "List of tags to apply"
