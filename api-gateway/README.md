@@ -18,7 +18,9 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_api_gateway_authorizer.cognito](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_authorizer) | resource |
+| [aws_api_gateway_deployment.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_deployment) | resource |
 | [aws_api_gateway_rest_api.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_rest_api) | resource |
+| [aws_api_gateway_stage.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_stage) | resource |
 | [aws_cognito_user_pools.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cognito_user_pools) | data source |
 
 ## Inputs
@@ -31,6 +33,7 @@ No modules.
 | <a name="input_identity_source"></a> [identity\_source](#input\_identity\_source) | The source of the identity in an incoming request. | `string` | `"method.request.header.Authorization"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of your API Gateway | `string` | n/a | yes |
 | <a name="input_openapi_spec"></a> [openapi\_spec](#input\_openapi\_spec) | Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail | `string` | n/a | yes |
+| <a name="input_stage_name"></a> [stage\_name](#input\_stage\_name) | The name of deployment stage | `string` | n/a | yes |
 
 ## Outputs
 

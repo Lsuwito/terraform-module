@@ -14,6 +14,11 @@ variable "openapi_spec" {
   description = "Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail"
 }
 
+variable "stage_name" {
+  type        = string
+  description = "The name of deployment stage"
+}
+
 variable "additional_tags" {
   type        = map(string)
   description = "List of tags to apply"
