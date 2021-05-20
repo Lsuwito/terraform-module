@@ -1,7 +1,7 @@
 resource "aws_api_gateway_rest_api" "main" {
   name = var.name
   tags = var.additional_tags
-  body = jsonencode(var.openapi_spec)
+  body = var.openapi_spec
   endpoint_configuration {
     types = [var.endpoint_type]
   }

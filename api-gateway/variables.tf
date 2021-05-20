@@ -10,7 +10,7 @@ variable "endpoint_type" {
 }
 
 variable "openapi_spec" {
-  type        = map(any)
+  type        = string
   description = "Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail"
 }
 
