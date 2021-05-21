@@ -40,10 +40,9 @@ No modules.
 | <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | List of tags to apply | `map(string)` | `{}` | no |
 | <a name="input_cognito_user_pool_name"></a> [cognito\_user\_pool\_name](#input\_cognito\_user\_pool\_name) | Cognito user pool's name | `string` | `""` | no |
 | <a name="input_endpoint_type"></a> [endpoint\_type](#input\_endpoint\_type) | Endpoint type. Valid values: EDGE, REGIONAL, PRIVATE | `string` | `"EDGE"` | no |
+| <a name="input_event_service_role_name"></a> [event\_service\_role\_name](#input\_event\_service\_role\_name) | Role name for events resources' integration with AWS service | `string` | n/a | yes |
 | <a name="input_identity_source"></a> [identity\_source](#input\_identity\_source) | The source of the identity in an incoming request. | `string` | `"method.request.header.Authorization"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of your API Gateway | `string` | n/a | yes |
-| <a name="input_openapi_spec"></a> [openapi\_spec](#input\_openapi\_spec) | Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail | `string` | n/a | yes |
-| <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Role name for AWS integration | `string` | n/a | yes |
 | <a name="input_stage_name"></a> [stage\_name](#input\_stage\_name) | The name of deployment stage | `string` | n/a | yes |
 
 ## Outputs

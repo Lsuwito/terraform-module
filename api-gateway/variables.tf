@@ -9,11 +9,6 @@ variable "endpoint_type" {
   default     = "EDGE"
 }
 
-variable "openapi_spec" {
-  type        = string
-  description = "Open API specification. See https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html for detail"
-}
-
 variable "stage_name" {
   type        = string
   description = "The name of deployment stage"
@@ -39,7 +34,7 @@ variable "identity_source" {
 }
 
 # AWS integration credentials
-variable "role_name" {
+variable "event_service_role_name" {
   type        = string
-  description = "Role name for AWS integration"
+  description = "Role name for events resources' integration with AWS service"
 }

@@ -84,7 +84,7 @@ resource "aws_api_gateway_integration" "events_stream_put" {
   http_method          = "POST"
   type                 = "AWS"
   uri                  = "arn:aws:apigateway:${data.aws_region.current.name}:kinesis:action/PutRecords"
-  credentials          = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/${var.role_name}"
+  credentials          = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/${var.event_service_role_name}"
   passthrough_behavior = "WHEN_NO_TEMPLATES"
   request_parameters = {
     "integration.request.header.Content-Type" = "'application/x-amz-json-1.1'"
