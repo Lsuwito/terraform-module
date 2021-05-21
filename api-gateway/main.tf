@@ -124,11 +124,11 @@ resource "aws_api_gateway_deployment" "main" {
 
   triggers = {
     redeployment = sha1(jsonencode([
-      aws_api_gateway_resource.events.id,
-      aws_api_gateway_resource.events_stream.id,
-      aws_api_gateway_resource.events_stream_records.id,
-      aws_api_gateway_method.events_stream_put.id,
-      aws_api_gateway_integration.events_stream_put.id
+      aws_api_gateway_resource.events,
+      aws_api_gateway_resource.events_stream,
+      aws_api_gateway_resource.events_stream_records,
+      aws_api_gateway_method.events_stream_put,
+      aws_api_gateway_integration.events_stream_put
     ]))
   }
 
