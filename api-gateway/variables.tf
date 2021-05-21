@@ -37,3 +37,9 @@ variable "identity_source" {
   description = "The source of the identity in an incoming request."
   default     = "method.request.header.Authorization"
 }
+
+# AWS integration credentials
+variable "role_name" {
+  type        = string
+  description = "Role name for AWS integration"
+}
