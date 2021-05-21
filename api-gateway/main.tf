@@ -73,6 +73,9 @@ resource "aws_api_gateway_method" "events_stream_put" {
   request_models = {
     "application/json" = "PutEventsPayload"
   }
+  request_parameters = {
+    "method.request.header.Authorization" = true
+  }
 }
 
 data "aws_region" "current" {}
