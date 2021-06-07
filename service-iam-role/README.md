@@ -18,6 +18,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_iam_role.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_policy.managed](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy) | data source |
 | [aws_iam_policy_document.assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
@@ -26,7 +27,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | A list of tags to apply | `map(string)` | `{}` | no |
 | <a name="input_aws_services"></a> [aws\_services](#input\_aws\_services) | AWS services that are allowed to assume the role, i.e: [ec2.amazonaws.com] | `list(string)` | n/a | yes |
-| <a name="input_inline_policy"></a> [inline\_policy](#input\_inline\_policy) | The policy json in heredoc syntax | `string` | n/a | yes |
+| <a name="input_inline_policy"></a> [inline\_policy](#input\_inline\_policy) | The policy json in heredoc syntax | `string` | `""` | no |
+| <a name="input_managed_policies"></a> [managed\_policies](#input\_managed\_policies) | A list of managed policy name to attach to the role | `list(string)` | `[]` | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Role name | `string` | n/a | yes |
 
 ## Outputs
