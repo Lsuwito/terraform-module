@@ -16,3 +16,5 @@ repos:
         args: ["kinesis-stream"]
       - id: terraform-docs-system
         args: ["api-gateway"]
+      - id: terraform-docs-system
+        args: ["eks-cluster"]
