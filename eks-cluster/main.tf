@@ -77,3 +77,16 @@ resource "aws_route_table_association" "private" {
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private.id
 }
+
+data "aws_iam_role" "eks" {
+  name = var.role
+}
+
+resource "aws_eks_cluster" "main" {
+  name     = var.cluster_name
+  role_arn = data.aws_iam_role.eks.arn
+  vpc_config {
+    public_access_cidrs = var.public_access_cidrs
+    subnet_ids          = concat(aws_subnet.public[*].id, aws_subnet.private[*].id)
+  }
+}
