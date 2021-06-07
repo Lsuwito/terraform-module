@@ -41,10 +41,15 @@ resource "aws_route_table" "private" {
   }
 }
 
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
 resource "aws_subnet" "private" {
-  count      = length(var.private_subnet_cidr_blocks)
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.private_subnet_cidr_blocks[count.index]
+  count                = length(var.private_subnet_cidr_blocks)
+  vpc_id               = aws_vpc.main.id
+  cidr_block           = var.private_subnet_cidr_blocks[count.index]
+  availability_zone_id = data.aws_availability_zones.available[count.index].id
   tags = {
     Name = format("%s-private-subnet-%s", var.vpc_name, count.index)
   }
@@ -54,6 +59,7 @@ resource "aws_subnet" "public" {
   count                   = length(var.public_subnet_cidr_blocks)
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public_subnet_cidr_blocks[count.index]
+  availability_zone_id    = data.aws_availability_zones.available[count.index].id
   map_public_ip_on_launch = true
   tags = {
     Name = format("%s-public-subnet-%s", var.vpc_name, count.index)
