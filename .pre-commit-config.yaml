@@ -18,3 +18,5 @@ repos:
         args: ["api-gateway"]
       - id: terraform-docs-system
         args: ["eks-cluster"]
+      - id: terraform-docs-system
+        args: ["vpc"]
