@@ -20,3 +20,5 @@ repos:
         args: ["eks-cluster"]
       - id: terraform-docs-system
         args: ["vpc"]
+      - id: terraform-docs-system
+        args: ["ec2"]
